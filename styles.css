@@ -1,0 +1,127 @@
+* { box-sizing: border-box; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #2d2d2d;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.btn-group { display: flex; gap: 10px; }
+
+button {
+  background-color: #2b2b2b;
+  color: #e0e0e0;
+  border: 1px solid #3d3d3d;
+  padding: 8px 18px;
+  border-radius: 8px; /* Rounded elements */
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+button:hover { background-color: #3b3b3b; border-color: #4d4d4d; }
+button:active { background-color: #1e1e1e; }
+#btn-save { background-color: #0e639c; color: #fff; border-color: #1177bb; }
+#btn-save:hover { background-color: #1177bb; }
+
+.file-info { display: flex; align-items: center; gap: 14px; }
+
+#file-name {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 10px 14px;
+  border-radius: 8px;
+  width: 320px;
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  transition: border 0.2s;
+}
+#file-name:focus { outline: none; border-color: #0e639c; }
+
+#save-status { font-size: 13px; color: #4caf50; min-width: 60px; font-weight: 500; }
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  background-color: #121212;
+  padding: 12px;
+  gap: 12px;
+}
+
+.panel {
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#editor-container { width: 100%; }
+#tree-container { width: 0; display: flex; flex-direction: column; }
+.hidden { display: none !important; }
+
+#status-bar {
+  padding: 8px 20px;
+  background-color: #007acc;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'Fira Code', monospace;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+}
+
+#status-bar.error { background-color: #d32f2f; }
+#copy-path-btn { cursor: pointer; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 4px; transition: 0.2s; }
+#copy-path-btn:hover { background: rgba(255,255,255,0.3); }
+
+/* Trace highlights in Monaco */
+.highlight-target {
+  background-color: rgba(255, 235, 59, 0.4);
+  border-radius: 3px;
+}
+
+/* Advanced JSONEditor CSS overrides */
+.jsoneditor { border: none !important; background-color: transparent !important; width: 100%; display: flex; flex-direction: column; }
+.jsoneditor-menu { background-color: #252526 !important; border-bottom: 1px solid #333 !important; }
+.jsoneditor-tree { background-color: #1e1e1e !important; padding: 10px !important; }
+.jsoneditor-tree table.jsoneditor-tree { border-spacing: 0; width: 100%; margin-top: 5px; }
+
+/* Custom Font + Syntax Colors */
+.jsoneditor-node, .jsoneditor-value, .jsoneditor-readonly { 
+  color: #d4d4d4 !important; 
+  font-family: 'Fira Code', 'JetBrains Mono', monospace !important; 
+  font-size: 14px !important; 
+}
+.jsoneditor-field { color: #9cdcfe !important; }
+.jsoneditor-value.jsoneditor-string { color: #ce9178 !important; }
+.jsoneditor-value.jsoneditor-number { color: #b5cea8 !important; }
+.jsoneditor-value.jsoneditor-boolean, .jsoneditor-value.jsoneditor-null { color: #dcdcaa !important; font-weight: bold; }
+
+.jsoneditor-tree button { outline: none !important; }
+.jsoneditor-contextmenu .jsoneditor-menu { background: #252526 !important; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important; border: 1px solid #444 !important;}
+.jsoneditor-contextmenu .jsoneditor-menu li button { color: #fff; font-family: 'Inter', sans-serif; font-size: 13px; }
+.jsoneditor-contextmenu .jsoneditor-menu li button.jsoneditor-selected, 
+.jsoneditor-contextmenu .jsoneditor-menu li button:hover { background-color: #0e639c !important; }

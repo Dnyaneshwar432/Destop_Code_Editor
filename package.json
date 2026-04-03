@@ -1,0 +1,24 @@
+{
+  "name": "desktop-editor",
+  "version": "1.0.0",
+  "description": "Modern text and JSON editor with Electron",
+  "homepage": "https://github.com/Dnyaneshwar432/Destop_Code_Editor#readme",
+  "bugs": {
+    "url": "https://github.com/Dnyaneshwar432/Destop_Code_Editor/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dnyaneshwar432/Destop_Code_Editor.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . --no-sandbox"
+  },
+  "dependencies": {
+    "electron": "^29.0.0"
+  },
+  "devDependencies": {}
+}
