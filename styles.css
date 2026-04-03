@@ -125,3 +125,86 @@ button:active { background-color: #1e1e1e; }
 .jsoneditor-contextmenu .jsoneditor-menu li button { color: #fff; font-family: 'Inter', sans-serif; font-size: 13px; }
 .jsoneditor-contextmenu .jsoneditor-menu li button.jsoneditor-selected, 
 .jsoneditor-contextmenu .jsoneditor-menu li button:hover { background-color: #0e639c !important; }
+
+/* Horizontal Tabs UI */
+.tabs-container {
+  display: flex;
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #2d2d2d;
+  overflow-x: auto;
+}
+.tabs-list {
+  display: flex;
+}
+.tab {
+  padding: 8px 16px;
+  background-color: #252526;
+  color: #888;
+  border-right: 1px solid #111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  min-width: 130px;
+  max-width: 250px;
+  transition: all 0.2s;
+}
+.tab:hover { background-color: #2a2a2b; color: #bbb; }
+.tab.active {
+  background-color: #1e1e1e;
+  color: #fff;
+  border-top: 2px solid #0e639c;
+}
+.tab-title { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: 'Fira Code', monospace; }
+.tab-close {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  color: #888;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab-close:hover { background-color: #444; color: #ff5252; }
+.tab-add-btn {
+  background: transparent;
+  color: #888;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.tab-add-btn:hover { background-color: #333; color: #fff; }
+
+/* json tools for path notation */
+.json-tools {
+  display: flex;
+  gap: 12px;
+  padding: 10px 14px;
+  background-color: #252526;
+  border-bottom: 1px solid #333;
+  align-items: center;
+  font-size: 13px;
+}
+.json-tools input[type="text"] {
+  flex: 1;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  transition: 0.2s;
+}
+.json-tools input[type="text"]:focus { border-color: #0e639c; outline: none; }
+#jsoneditor-wrapper {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

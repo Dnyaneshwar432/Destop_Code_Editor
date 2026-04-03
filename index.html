@@ -20,10 +20,22 @@
       <span id="save-status"></span>
     </div>
   </div>
+
+  <div id="tabs-container" class="tabs-container">
+    <div class="tabs-list" id="tabs-list"></div>
+    <button id="btn-add-tab" class="tab-add-btn">+</button>
+  </div>
   
   <div class="main-content">
     <div id="editor-container" class="panel"></div>
-    <div id="tree-container" class="panel hidden"></div>
+    <div id="tree-container" class="panel hidden">
+      <div class="json-tools">
+        <label><input type="radio" name="path-style" value="dot" checked> Dot Notation</label>
+        <label><input type="radio" name="path-style" value="bracket"> Bracket Notation</label>
+        <input type="text" id="json-path-display" readonly placeholder="Click a node to see path...">
+      </div>
+      <div id="jsoneditor-wrapper" style="flex:1;"></div>
+    </div>
   </div>
 
   <div id="status-bar">
